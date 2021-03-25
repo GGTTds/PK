@@ -1,0 +1,17 @@
+﻿<Window x:Class="PK_KONTR.WINoTC"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PK_KONTR"
+        mc:Ignorable="d"
+        Title="Создание отчета" Height="201.993" Width="243.526">
+    <Grid>
+        <Button Click="Button_Click" Content="Создать отчет" Margin="40,115,0,0" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="154"/>
+        <Label Content="Начальная строка" HorizontalAlignment="Left" Margin="37,20,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="na" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" Margin="157,22,0,0"/>
+        <Label Content="Конечная строка" HorizontalAlignment="Left" Margin="37,64,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="ko" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" Margin="157,66,0,0"/>
+
+    </Grid>
+</Window>
