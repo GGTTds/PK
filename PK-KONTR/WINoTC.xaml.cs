@@ -52,7 +52,7 @@ namespace PK_KONTR
             Start.Kon4 = Convert.ToInt32(ko.Text);
             var App = new Excel.Application();
             Excel.Workbook xlWB;
-            if (Start.Na4 < Start.Kon4)
+            if (Start.Na4 > Start.Kon4)
             {
                 MessageBox.Show("Вы ввели некоректное значение", "Ошибка");
             }
