@@ -29,6 +29,10 @@ namespace PK_KONTR
         public MainWindow()
         {
             InitializeComponent();
+            StreamReader rr = new StreamReader("Put.txt");
+            Start.PutinBB = rr.ReadLine();
+            rr.Close();
+            Fail();
 
         }
 
@@ -78,7 +82,8 @@ namespace PK_KONTR
 
         public void Fail()
         {
-            if (Start.PutinBB != null)
+           
+            if ( Start.PutinBB != null)
             { fr.Content = " Выбран "; }
             else
             { fr.Content = " Не выбран"; }

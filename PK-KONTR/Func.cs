@@ -34,7 +34,7 @@ namespace PK_KONTR
             //worksheet1.Cells[6][7] = "sfsfssf";
            
             int lastRow = worksheet1.Cells[1].SpecialCells(Excel.XlCellType.xlCellTypeLastCell, Type.Missing).Row;
-                MessageBox.Show($"Последняя строчка: {lastRow.ToString()}");
+                MessageBox.Show($"Последняя строчка: {lastRow}");
                 for (int i = 1; k <= Start.KolPov; i++)
             {
 
@@ -48,51 +48,53 @@ namespace PK_KONTR
                 {
                     int st = i;
                     int sd = StartIndex;
-                    //MessageBox.Show(Start.str[Ind].ToString());
-                    worksheet2.Cells[1][StartIndex] = worksheet1.Cells[1][st];
-                    worksheet2.Cells[2][StartIndex] = worksheet1.Cells[2][st];
-                    worksheet2.Cells[1][StartIndex + 1] = worksheet1.Cells[3][st];
-                    Excel.Range Head21 = worksheet2.Range[worksheet2.Cells[2][StartIndex], worksheet2.Cells[5][StartIndex]];
-                    Head21.Merge();
-                    StartIndex += 1;
-                    worksheet2.Cells[1][StartIndex] = worksheet1.Cells[3][st];
-                    worksheet2.Cells[2][StartIndex] = worksheet1.Cells[4][st];
-                    Excel.Range Head211 = worksheet2.Range[worksheet2.Cells[2][StartIndex], worksheet2.Cells[5][StartIndex]];
-                    Head211.Merge();
-                    StartIndex += 1;
-                    worksheet2.Cells[1][StartIndex] = worksheet1.Cells[5][st];
-                    worksheet2.Cells[2][StartIndex] = worksheet1.Cells[6][st];
-                    Excel.Range Head214 = worksheet2.Range[worksheet2.Cells[2][StartIndex], worksheet2.Cells[5][StartIndex]];
-                    Head214.Merge();
-                    StartIndex += 1;
-                    worksheet2.Cells[1][StartIndex] = " ВидПроверки ";
-                    worksheet2.Cells[2][StartIndex] = " Норма ";
-                    worksheet2.Cells[3][StartIndex] = " Факт ";
-                    worksheet2.Cells[4][StartIndex] = " Проверено, шт ";
-                    worksheet2.Cells[5][StartIndex] = " Несоотв., шт ";
-                    StartIndex += 1;
-                    worksheet2.Cells[1][StartIndex] = worksheet1.Cells[7][st];
-                    worksheet2.Cells[2][StartIndex] = worksheet1.Cells[8][st];
-                    //Excel.Range Head27 = worksheet2.Range[worksheet2.Cells[2][StartIndex], worksheet2.Cells[6][StartIndex]];
-                    //Head27.Merge();
-                    StartIndex += 1;
-                    worksheet2.Cells[1][StartIndex] = worksheet1.Cells[9][st];
-                    worksheet2.Cells[2][StartIndex] = worksheet1.Cells[10][st];
-                    for (int r = 11; r <= 50; r += 2)
-                    {
-                        if (worksheet1.Cells[r][st].value == null)
-                        {
-
-                        }
-                        else
-                        {
+                        
+                            //MessageBox.Show(Start.str[Ind].ToString());
+                            worksheet2.Cells[1][StartIndex] = worksheet1.Cells[1][st];
+                            worksheet2.Cells[2][StartIndex] = worksheet1.Cells[2][st];
+                            worksheet2.Cells[1][StartIndex + 1] = worksheet1.Cells[3][st];
+                            Excel.Range Head21 = worksheet2.Range[worksheet2.Cells[2][StartIndex], worksheet2.Cells[5][StartIndex]];
+                            Head21.Merge();
                             StartIndex += 1;
-                            worksheet2.Cells[1][StartIndex] = worksheet1.Cells[r][st];
-                            worksheet2.Cells[2][StartIndex] = worksheet1.Cells[r += 1][st];
-                        }
-                    }
-                    StartIndex += 1;
+                            worksheet2.Cells[1][StartIndex] = worksheet1.Cells[3][st];
+                            worksheet2.Cells[2][StartIndex] = worksheet1.Cells[4][st];
+                            Excel.Range Head211 = worksheet2.Range[worksheet2.Cells[2][StartIndex], worksheet2.Cells[5][StartIndex]];
+                            Head211.Merge();
+                            StartIndex += 1;
+                            worksheet2.Cells[1][StartIndex] = worksheet1.Cells[5][st];
+                            worksheet2.Cells[2][StartIndex] = worksheet1.Cells[6][st];
+                            Excel.Range Head214 = worksheet2.Range[worksheet2.Cells[2][StartIndex], worksheet2.Cells[5][StartIndex]];
+                            Head214.Merge();
+                            StartIndex += 1;
+                            worksheet2.Cells[1][StartIndex] = " ВидПроверки ";
+                            worksheet2.Cells[2][StartIndex] = " Норма ";
+                            worksheet2.Cells[3][StartIndex] = " Факт ";
+                            worksheet2.Cells[4][StartIndex] = " Проверено, шт ";
+                            worksheet2.Cells[5][StartIndex] = " Несоотв., шт ";
+                            StartIndex += 1;
+                            worksheet2.Cells[1][StartIndex] = worksheet1.Cells[7][st];
+                            worksheet2.Cells[2][StartIndex] = worksheet1.Cells[8][st];
+                            //Excel.Range Head27 = worksheet2.Range[worksheet2.Cells[2][StartIndex], worksheet2.Cells[6][StartIndex]];
+                            //Head27.Merge();
+                            StartIndex += 1;
+                            worksheet2.Cells[1][StartIndex] = worksheet1.Cells[9][st];
+                            worksheet2.Cells[2][StartIndex] = worksheet1.Cells[10][st];
 
+                            for (int r = 7; r <= 50; r += 1)
+                            {
+                                if (worksheet1.Cells[r][st].value == null)
+                                {
+
+                                }
+                                else
+                                {
+                                    StartIndex += 1;
+                                    worksheet2.Cells[1][StartIndex] = worksheet1.Cells[r][st];
+                                    worksheet2.Cells[2][StartIndex] = worksheet1.Cells[r += 1][st];
+                                }
+                            }
+                            StartIndex += 1;
+                        
                 }
                 if (i == lastRow)
                 {
