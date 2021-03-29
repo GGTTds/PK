@@ -15,6 +15,7 @@ namespace PK_KONTR
         public static int Na4;
         public static int Kon4;
         public static string PutinBB = "";
-        public static string[] str = new string[200];
+        public static string[] str = new string[1000];
+        public static string[] str1 = new string[1000];
     }
 }

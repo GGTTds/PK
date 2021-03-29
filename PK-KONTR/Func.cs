@@ -13,7 +13,6 @@ namespace PK_KONTR
     {
         public static void Viz(string[] s)
         {
-            
             var App = new Excel.Application();
             Excel.Workbook xlWB;
             try
@@ -37,10 +36,9 @@ namespace PK_KONTR
                 MessageBox.Show($"Последняя строчка: {lastRow}");
                 for (int i = 1; k <= Start.KolPov; i++)
             {
-
-
-                //Start.str[Ind].Equals(worksheet1.Cells[6][i].Formula)
-                //worksheet1.Cells[6][i].Formula == Start.str[Ind]
+                    //Start.str[Ind].Equals(worksheet1.Cells[6][i].Formula)
+                    //worksheet1.Cells[6][i].Formula == Start.str[Ind]
+                    int po = 1;
                     int pp = StartIndex;
                     worksheet2.Columns.AutoFit();
                     //Rng = worksheet2.Cells[6].Find(Start.str[Ind], Type.Missing, Excel.XlFindLookIn.xlValues, Excel.XlLookAt.xlPart); //осуществляем поиск на листе
@@ -48,7 +46,6 @@ namespace PK_KONTR
                 {
                     int st = i;
                     int sd = StartIndex;
-                        
                             //MessageBox.Show(Start.str[Ind].ToString());
                             worksheet2.Cells[1][StartIndex] = worksheet1.Cells[1][st];
                             worksheet2.Cells[2][StartIndex] = worksheet1.Cells[2][st];
@@ -56,8 +53,8 @@ namespace PK_KONTR
                             Excel.Range Head21 = worksheet2.Range[worksheet2.Cells[2][StartIndex], worksheet2.Cells[5][StartIndex]];
                             Head21.Merge();
                             StartIndex += 1;
-                            worksheet2.Cells[1][StartIndex] = worksheet1.Cells[3][st];
-                            worksheet2.Cells[2][StartIndex] = worksheet1.Cells[4][st];
+                            worksheet2.Cells[1][StartIndex] = "Поступило, шт";
+                            worksheet2.Cells[2][StartIndex] = Start.str1[Ind];
                             Excel.Range Head211 = worksheet2.Range[worksheet2.Cells[2][StartIndex], worksheet2.Cells[5][StartIndex]];
                             Head211.Merge();
                             StartIndex += 1;
@@ -79,8 +76,7 @@ namespace PK_KONTR
                             StartIndex += 1;
                             worksheet2.Cells[1][StartIndex] = worksheet1.Cells[9][st];
                             worksheet2.Cells[2][StartIndex] = worksheet1.Cells[10][st];
-
-                            for (int r = 7; r <= 50; r += 1)
+                            for (int r = 11; r <= 50; r += 1)
                             {
                                 if (worksheet1.Cells[r][st].value == null)
                                 {
@@ -93,9 +89,18 @@ namespace PK_KONTR
                                     worksheet2.Cells[2][StartIndex] = worksheet1.Cells[r += 1][st];
                                 }
                             }
-                            StartIndex += 1;
-                        
-                }
+                        Excel.Range RR1 = worksheet2.Range[worksheet2.Cells[1][pp], worksheet2.Cells[6][StartIndex]];
+                        RR1.Borders[Excel.XlBordersIndex.xlEdgeBottom].LineStyle =
+                            RR1.Borders[Excel.XlBordersIndex.xlEdgeLeft].LineStyle =
+                            RR1.Borders[Excel.XlBordersIndex.xlEdgeRight].LineStyle =
+                            RR1.Borders[Excel.XlBordersIndex.xlEdgeTop].LineStyle =
+                            RR1.Borders[Excel.XlBordersIndex.xlInsideHorizontal].LineStyle =
+                            RR1.Borders[Excel.XlBordersIndex.xlInsideVertical].LineStyle = Excel.XlLineStyle.xlContinuous;
+                        StartIndex += 1;
+                        StartIndex += 1;
+                        StartIndex += 1;
+                    }
+
                 if (i == lastRow)
                 {
                     if (Ind <= Start.KolPov)
@@ -105,13 +110,7 @@ namespace PK_KONTR
                     i = 1;
                     k += 1;
                 }
-                Excel.Range RR1 = worksheet2.Range[worksheet2.Cells[1][pp], worksheet2.Cells[6][StartIndex]];
-                RR1.Borders[Excel.XlBordersIndex.xlEdgeBottom].LineStyle =
-                    RR1.Borders[Excel.XlBordersIndex.xlEdgeLeft].LineStyle =
-                    RR1.Borders[Excel.XlBordersIndex.xlEdgeRight].LineStyle =
-                    RR1.Borders[Excel.XlBordersIndex.xlEdgeTop].LineStyle =
-                    RR1.Borders[Excel.XlBordersIndex.xlInsideHorizontal].LineStyle =
-                    RR1.Borders[Excel.XlBordersIndex.xlInsideVertical].LineStyle = Excel.XlLineStyle.xlContinuous;
+               
                 //else
                 //{
                 //    if (Ind <= Start.KolPov - 1)
@@ -310,10 +309,6 @@ namespace PK_KONTR
                 //    StartIndex += 1;
                 //}
             }
-
-
-
-
             }
             catch
             {
@@ -322,9 +317,6 @@ namespace PK_KONTR
             }
 
             App.Visible = true;
-
-
-
         }
     }
 }

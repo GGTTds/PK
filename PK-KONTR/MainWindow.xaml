@@ -13,7 +13,7 @@
         <Label Content="Статус файла:" HorizontalAlignment="Left" Margin="56,203,0,0" VerticalAlignment="Top"/>
         <Label x:Name="fr" Content="Не выбран" HorizontalAlignment="Left" Margin="133,203,0,0" VerticalAlignment="Top" Width="75" Foreground="Red"/>
         <Image HorizontalAlignment="Left" Height="29" Margin="10,10,0,0" VerticalAlignment="Top" Width="95" Source="logo-kontur-big.jpg"/>
-        <Button Click="Add_Copy_Click" x:Name="Add_Copy" Content=" Выбрать файл (данные)" Width="157" Margin="49,171,0,0" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top"/>
+        <Button Click="Add_Copy_Click" x:Name="Add_Copy" Content=" Выбрать файл (журнал)" Width="157" Margin="49,171,0,0" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

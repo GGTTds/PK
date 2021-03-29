@@ -27,22 +27,14 @@ namespace PK_KONTR
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            GetFunc();
-               
-            //MessageBox.Show(Start.str.LongLength.ToString());
-            //    MessageBox.Show(Start.str[0].ToString());
-            //    MessageBox.Show(Start.str[1].ToString());
-            //    MessageBox.Show(Start.str[2].ToString());
-            //    MessageBox.Show(Start.str[3].ToString());
-        }
+        { GetFunc(); }
 
         private void WTO_KeyUp(object sender, KeyEventArgs e)
         {
             if(e.Key.Equals(Key.Enter))
             { GetFunc(); }
             if(e.Key.Equals(Key.Escape))
-            { MainWindow ww = new MainWindow(); ww.Show(); }
+            { MainWindow ww = new MainWindow(); ww.Show(); this.Close(); }
         }
     
     
@@ -72,12 +64,11 @@ namespace PK_KONTR
                     //MessageBox.Show(Start.Na4.ToString());
                     for (int i = Start.Na4; i <= Start.Kon4; i++)
                     {
-
                         Start.str[InFor] = worksheet2.Cells[3][i].Formula;
+                        Start.str1[InFor] = worksheet2.Cells[5][i].Formula;
                         InFor += 1;
                         Start.KolPov += 1;
                     }
-
                     App.Quit();
                     Func.Viz(Start.str);
                 }
