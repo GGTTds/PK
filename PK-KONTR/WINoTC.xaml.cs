@@ -40,10 +40,9 @@ namespace PK_KONTR
     
     public void GetFunc()
         {
-            Start.Na4 = Convert.ToInt32(na.Text);
-            Start.Kon4 = Convert.ToInt32(ko.Text);
-            var App = new Excel.Application();
-            Excel.Workbook xlWB;
+            
+            int.TryParse(na.Text, out Start.Na4);
+            int.TryParse(ko.Text, out Start.Kon4);
             if (Start.Na4 > Start.Kon4)
             {
                 MessageBox.Show("Вы ввели некоректное значение", "Ошибка");
@@ -53,6 +52,9 @@ namespace PK_KONTR
 
                 try
                 {
+                    var App = new Excel.Application();
+                    Excel.Workbook xlWB;
+                    
                     string L;
                     StreamReader rr = new StreamReader("PutHH.txt");
                     L = rr.ReadLine();
@@ -74,10 +76,13 @@ namespace PK_KONTR
                 }
                 catch
                 {
-                    App.Quit();
-                    MessageBox.Show(" Ошибка, перезапустите приложение");
+                    WINoTC ww = new WINoTC();
+                    ww.Show();
+                    this.Close();
+                    MessageBox.Show(" Ошибка, введены не верные данные");
                 }
             }
+            
         }
 
         private void na_PreviewTextInput(object sender, TextCompositionEventArgs e)

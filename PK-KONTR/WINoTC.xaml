@@ -7,11 +7,27 @@
         mc:Ignorable="d"
         Title="Создание отчета" Height="201.993" Width="243.526" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" KeyUp="WTO_KeyUp">
     <Grid>
-        <Button Click="Button_Click" Content="Создать отчет" Margin="40,115,0,0" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="154"/>
+        <Button Click="Button_Click" Content="Создать отчет" Margin="40,115,0,0" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="154" Background="{x:Null}" BorderBrush="#FF0D46BB"/>
         <Label Content="Начальная строка" HorizontalAlignment="Left" Margin="37,20,0,0" VerticalAlignment="Top"/>
-        <TextBox PreviewTextInput="na_PreviewTextInput" x:Name="na" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" Margin="157,22,0,0"/>
+        <TextBox PreviewTextInput="na_PreviewTextInput" x:Name="na" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" Margin="157,22,0,0">
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                    <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                    <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                    <GradientStop Color="#FF0D46BB" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
         <Label Content="Конечная строка" HorizontalAlignment="Left" Margin="37,64,0,0" VerticalAlignment="Top"/>
-        <TextBox PreviewTextInput="na_PreviewTextInput" x:Name="ko" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" Margin="157,66,0,0"/>
+        <TextBox PreviewTextInput="na_PreviewTextInput" x:Name="ko" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="61" Margin="157,66,0,0" Background="White">
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                    <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                    <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                    <GradientStop Color="#FF0D46BB" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
 
     </Grid>
 </Window>

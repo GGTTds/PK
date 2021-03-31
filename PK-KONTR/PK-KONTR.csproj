@@ -142,5 +142,8 @@
   <ItemGroup>
     <Resource Include="alpha_k_box_outline_icon_140005.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="22a1c12e3c9a5cc251899657bf0d2.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

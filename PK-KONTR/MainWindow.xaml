@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PK_KONTR"
         mc:Ignorable="d"
-           Title="Меню" Height="265.545" Width="255.727" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"  Background="White" Icon="logo-kontur-big.jpg">
+           Title="Меню" Height="265.545" Width="255.727" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="logo-kontur-big.jpg" Background="White">
     <Grid Margin="0,0,-6,-2">
-        <Button Click="CreaOtch_Click" Name="CreaOtch" Content=" Создать отчет" Margin="49,36,0,0" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="157"/>
-        <Button Click="Edit_Click" x:Name="Edit" Content=" Изменить продукцию" Height="30" Margin="49,80,0,0" HorizontalAlignment="Left" Width="157" VerticalAlignment="Top"/>
-        <Button Click="Add_Click" x:Name="Add" Content=" Выбрать файл (отчет)" Width="157" Margin="49,127,0,0" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top"/>
-        <Label Content="Статус файла:" HorizontalAlignment="Left" Margin="56,203,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="fr" Content="Не выбран" HorizontalAlignment="Left" Margin="133,203,0,0" VerticalAlignment="Top" Width="75" Foreground="Red"/>
-        <Image HorizontalAlignment="Left" Height="29" Margin="10,10,0,0" VerticalAlignment="Top" Width="95" Source="logo-kontur-big.jpg"/>
-        <Button Click="Add_Copy_Click" x:Name="Add_Copy" Content=" Выбрать файл (журнал)" Width="157" Margin="49,171,0,0" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top"/>
+        <Button Click="CreaOtch_Click" Name="CreaOtch" Content=" Создать отчет" Margin="43,36,0,0" Height="30" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="#FF1A48A8" HorizontalAlignment="Left" Width="157"/>
+        <Button Click="Edit_Click" x:Name="Edit" Content=" Изменить продукцию" Height="30" Margin="43,80,0,0" HorizontalAlignment="Left" Width="157" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="#FF0D46BB"/>
+        <Button Click="Add_Click" x:Name="Add" Content=" Выбрать файл (отчет)" Width="157" Margin="43,127,0,0" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="#FF0D46BB"/>
+        <Label Content="Статус файла:" HorizontalAlignment="Left" Margin="50,203,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="fr" Content="Не выбран" HorizontalAlignment="Left" Margin="127,203,0,0" VerticalAlignment="Top" Width="75" Foreground="Red"/>
+        <Image Height="29" Margin="75,7,0,0" VerticalAlignment="Top" Source="logo-kontur-big.jpg" HorizontalAlignment="Left" Width="95"/>
+        <Button Click="Add_Copy_Click" x:Name="Add_Copy" Content=" Выбрать файл (журнал)" Width="157" Margin="43,171,0,0" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="#FF0D46BB"/>
 
     </Grid>
 </Window>
