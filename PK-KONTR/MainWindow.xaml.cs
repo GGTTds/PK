@@ -1,18 +1,18 @@
 ﻿using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+//using System.Windows.Controls;
+//using System.Windows.Data;
+//using System.Windows.Documents;
+//using System.Windows.Input;
+//using System.Windows.Media;
+//using System.Windows.Media.Imaging;
+//using System.Windows.Navigation;
+//using System.Windows.Shapes;
 using System.Windows.Forms;
 using OpenFileDialog = System.Windows.Forms.OpenFileDialog;
 using MessageBox = System.Windows.Forms.MessageBox;
@@ -33,7 +33,6 @@ namespace PK_KONTR
             Start.PutinBB = rr.ReadLine();
             rr.Close();
             Fail();
-
         }
 
         private void CreaOtch_Click(object sender, RoutedEventArgs e)
@@ -47,17 +46,14 @@ namespace PK_KONTR
         {
             var App = new Excel.Application();
             Excel.Workbook xlWB;
-
             string L;
             StreamReader rr = new StreamReader("Put.txt");
             L = rr.ReadLine();
-
             L = L.Replace(@"\", "/");
             string xlFileName = L;
             xlWB = App.Workbooks.Open(L);
             App.Visible = true;
         }
-
         private void Add_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
@@ -71,15 +67,8 @@ namespace PK_KONTR
                 ss.Close();
                 DialogResult dialogResult = MessageBox.Show("Путь к файлу задан", "Файл", MessageBoxButtons.OK);
                 if (dialogResult == System.Windows.Forms.DialogResult.OK) { Fail(); }
-
-
-
             }
-
-
-
         }
-
         public void Fail()
         {
            
@@ -88,7 +77,6 @@ namespace PK_KONTR
             else
             { fr.Content = " Не выбран"; }
         }
-
         private void Add_Copy_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
@@ -103,7 +91,6 @@ namespace PK_KONTR
                 DialogResult dialogResult = MessageBox.Show("Путь к файлу задан", "Файл", MessageBoxButtons.OK);
                 if (dialogResult == System.Windows.Forms.DialogResult.OK)
                 { MessageBox.Show(" Файл выбран!"); }
-
             }
         }
     }
