@@ -21,6 +21,7 @@ namespace PK_KONTR
         public WINoTC()
         {
             InitializeComponent();
+            Start.str = new string[1000];
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -62,14 +63,19 @@ namespace PK_KONTR
                     //MessageBox.Show(Start.Na4.ToString());
                     for (int i = Start.Na4; i <= Start.Kon4; i++)
                     {
+                        
                         Start.str[InFor] = worksheet2.Cells[3][i].Formula;
                         Start.str1[InFor] = worksheet2.Cells[5][i].Formula;
                         InFor += 1;
                         Start.KolPov += 1;
                     }
-                    MessageBox.Show(Start.str[14].ToString());
+                    //MessageBox.Show(Start.str[15].ToString());
+                    Start.KolPov -= 1;
                     App.Quit();
                     Func.Viz(Start.str);
+                    WINoTC ww = new WINoTC();
+                    ww.Show();
+                    this.Close();
                 }
                 catch
                 {

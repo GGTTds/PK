@@ -40,7 +40,6 @@ namespace PK_KONTR
             {
                     //Start.str[Ind].Equals(worksheet1.Cells[6][i].Formula)
                     //worksheet1.Cells[6][i].Formula == Start.str[Ind]
-                    
                     int pp = StartIndex;
                     worksheet2.Columns.AutoFit();
                     //Rng = worksheet2.Cells[6].Find(Start.str[Ind], Type.Missing, Excel.XlFindLookIn.xlValues, Excel.XlLookAt.xlPart); //осуществляем поиск на листе
@@ -108,12 +107,11 @@ namespace PK_KONTR
 
                     if (i == lastRow)
                     {
-                        if (Ind <= Start.KolPov)
-                        { Ind += 1; }
-
-                        Start.KolPov -= 1;
-                        i = 1;
                         k += 1;
+                        if (Ind < Start.KolPov)
+                        { Ind += 1; }
+                        i = 1;
+                      
                     }
                     
             }
