@@ -115,6 +115,49 @@ namespace PK_KONTR
                     }
                     
             }
+                StartIndex += 1;
+                worksheet2.Cells[1][StartIndex] = "Проверку произвел:";
+                StartIndex += 1;
+                Excel.Range Head2112 = worksheet2.Range[worksheet2.Cells[2][StartIndex], worksheet2.Cells[4][StartIndex]];
+                Head2112.Merge();
+                worksheet2.Cells[2][StartIndex] = "_________________________________";
+                worksheet2.Cells[1][StartIndex] = "_________________________________";
+                Excel.Range Head21112 = worksheet2.Range[worksheet2.Cells[5][StartIndex], worksheet2.Cells[7][StartIndex]];
+                Head21112.Merge();
+                worksheet2.Cells[5][StartIndex] = "____________________________________";
+                StartIndex += 1;
+                worksheet2.Cells[1][StartIndex] = "Должность";
+                Excel.Range Head22112 = worksheet2.Range[worksheet2.Cells[2][StartIndex], worksheet2.Cells[4][StartIndex]];
+                Head22112.Merge();
+                worksheet2.Cells[2][StartIndex] = "Подпись";
+                Excel.Range Head221121 = worksheet2.Range[worksheet2.Cells[5][StartIndex], worksheet2.Cells[7][StartIndex]];
+                Head221121.Merge();
+                worksheet2.Cells[5][StartIndex] = "И.О.Фамилия";
+                StartIndex += 2;
+                Excel.Range Head21124 = worksheet2.Range[worksheet2.Cells[2][StartIndex], worksheet2.Cells[4][StartIndex]];
+                Head21124.Merge();
+                worksheet2.Cells[2][StartIndex] = "«______»___________20____";
+                StartIndex += 2;
+                Excel.Range Head21127 = worksheet2.Range[worksheet2.Cells[2][StartIndex], worksheet2.Cells[4][StartIndex]];
+                Head21127.Merge();
+                worksheet2.Cells[2][StartIndex] = "_________________________________";
+                worksheet2.Cells[1][StartIndex] = "_________________________________";
+                Excel.Range Head2111277 = worksheet2.Range[worksheet2.Cells[5][StartIndex], worksheet2.Cells[7][StartIndex]];
+                Head2111277.Merge();
+                worksheet2.Cells[5][StartIndex] = "____________________________________";
+                StartIndex += 1;
+                worksheet2.Cells[1][StartIndex] = "Должность";
+                Excel.Range Head221128 = worksheet2.Range[worksheet2.Cells[2][StartIndex], worksheet2.Cells[4][StartIndex]];
+                Head221128.Merge();
+                worksheet2.Cells[2][StartIndex] = "Подпись";
+                Excel.Range Head2211219 = worksheet2.Range[worksheet2.Cells[5][StartIndex], worksheet2.Cells[7][StartIndex]];
+                Head2211219.Merge();
+                worksheet2.Cells[5][StartIndex] = "И.О.Фамилия";
+                StartIndex += 2;
+                Excel.Range Head2112499 = worksheet2.Range[worksheet2.Cells[2][StartIndex], worksheet2.Cells[4][StartIndex]];
+                Head2112499.Merge();
+                worksheet2.Cells[2][StartIndex] = "«______»___________20____";
+            
             }
             catch
             {
