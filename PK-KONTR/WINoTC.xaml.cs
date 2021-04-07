@@ -67,6 +67,7 @@ namespace PK_KONTR
                         InFor += 1;
                         Start.KolPov += 1;
                     }
+                    MessageBox.Show(Start.str[14].ToString());
                     App.Quit();
                     Func.Viz(Start.str);
                 }
