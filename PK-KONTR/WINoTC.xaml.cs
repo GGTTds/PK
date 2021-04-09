@@ -76,8 +76,8 @@ namespace PK_KONTR
                     }
                     //MessageBox.Show(Start.str[15].ToString());
                     Start.KolPov -= 1;
-                    xlWB.Close(false);
-                    App.Quit();
+                    xlWB.Close(false,false,false);
+                    App.Application.Quit();
                     App = null;
                     xlWB = null;
                     worksheet2 = null;
