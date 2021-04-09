@@ -13,6 +13,7 @@ using System.Windows.Input;
 //using System.Windows.Shapes;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.IO;
+using System.Diagnostics;
 
 namespace PK_KONTR
 {
@@ -21,7 +22,9 @@ namespace PK_KONTR
         public WINoTC()
         {
             InitializeComponent();
+            Start.KolPov = 0;
             Start.str = new string[1000];
+            Start.str1 = new string[1000];
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -36,7 +39,7 @@ namespace PK_KONTR
         }
     
     
-    public void GetFunc()
+    public void GetFunc() 
         {
             
             int.TryParse(na.Text, out Start.Na4);
@@ -50,6 +53,7 @@ namespace PK_KONTR
 
                 try
                 {
+                    string g;
                     var App = new Excel.Application();
                     Excel.Workbook xlWB;
                     string L;
@@ -63,15 +67,22 @@ namespace PK_KONTR
                     //MessageBox.Show(Start.Na4.ToString());
                     for (int i = Start.Na4; i <= Start.Kon4; i++)
                     {
-                        
-                        Start.str[InFor] = worksheet2.Cells[3][i].Formula;
+                        g = worksheet2.Cells[3][i].Formula;
+                        g.Replace(@" ", "");
+                        Start.str[InFor] = g;
                         Start.str1[InFor] = worksheet2.Cells[5][i].Formula;
                         InFor += 1;
                         Start.KolPov += 1;
                     }
                     //MessageBox.Show(Start.str[15].ToString());
                     Start.KolPov -= 1;
+                    xlWB.Close(false);
                     App.Quit();
+                    App = null;
+                    xlWB = null;
+                    worksheet2 = null;
+                    GC.Collect();
+                    //MessageBox.Show(Start.str[3].ToString());
                     Func.Viz(Start.str);
                     WINoTC ww = new WINoTC();
                     ww.Show();

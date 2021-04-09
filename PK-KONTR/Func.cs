@@ -13,11 +13,11 @@ namespace PK_KONTR
     {
         public static void Viz(string[] s)
         {
-           
+            GC.Collect();
             var App = new Excel.Application();
             Excel.Workbook xlWB;
             try
-            { 
+            {
             string L;
             StreamReader rr = new StreamReader("Put.txt");
             L = rr.ReadLine();
@@ -35,15 +35,12 @@ namespace PK_KONTR
                 //MessageBox.Show($"Последняя строчка: {lastRow}");
                 Excel.Range Head291 = worksheet2.Range[worksheet2.Cells[1][1], worksheet2.Cells[6][1]];
                 Head291.Merge();
-                worksheet2.Cells[1][1].Formula = "                                              Входной контроль Приход №Протокол проверки закладных из  от  № - 20 от 20г.";
                 for (int i = 1; k <= Start.KolPov; i++)
             {
-                    //Start.str[Ind].Equals(worksheet1.Cells[6][i].Formula)
-                    //worksheet1.Cells[6][i].Formula == Start.str[Ind]
                     int pp = StartIndex;
                     worksheet2.Columns.AutoFit();
                     //Rng = worksheet2.Cells[6].Find(Start.str[Ind], Type.Missing, Excel.XlFindLookIn.xlValues, Excel.XlLookAt.xlPart); //осуществляем поиск на листе
-                    if (Start.str[Ind].Contains(worksheet1.Cells[6][i].Formula)) 
+                    if (s[Ind].Contains(worksheet1.Cells[6][i].Formula)) 
                 {
                     int st = i;
                     int sd = StartIndex;
@@ -157,7 +154,7 @@ namespace PK_KONTR
                 Excel.Range Head2112499 = worksheet2.Range[worksheet2.Cells[2][StartIndex], worksheet2.Cells[4][StartIndex]];
                 Head2112499.Merge();
                 worksheet2.Cells[2][StartIndex] = "«______»___________20____";
-            
+
             }
             catch
             {
