@@ -13,7 +13,6 @@ using System.Windows.Input;
 //using System.Windows.Shapes;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.IO;
-using System.Diagnostics;
 
 namespace PK_KONTR
 {
@@ -64,7 +63,6 @@ namespace PK_KONTR
                     xlWB = App.Workbooks.Open(L);
                     int InFor = 0;
                     Excel.Worksheet worksheet2 = App.Worksheets["Лист1"];
-                    //MessageBox.Show(Start.Na4.ToString());
                     for (int i = Start.Na4; i <= Start.Kon4; i++)
                     {
                         g = worksheet2.Cells[3][i].Formula;
@@ -74,7 +72,6 @@ namespace PK_KONTR
                         InFor += 1;
                         Start.KolPov += 1;
                     }
-                    //MessageBox.Show(Start.str[15].ToString());
                     Start.KolPov -= 1;
                     xlWB.Close(false,false,false);
                     App.Application.Quit();
@@ -82,7 +79,6 @@ namespace PK_KONTR
                     xlWB = null;
                     worksheet2 = null;
                     GC.Collect();
-                    //MessageBox.Show(Start.str[3].ToString());
                     Func.Viz(Start.str);
                     WINoTC ww = new WINoTC();
                     ww.Show();

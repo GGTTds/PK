@@ -61,7 +61,6 @@ namespace PK_KONTR
             {
                 string str = dialog.FileName;
                 Start.PutinBB = str;
-                //System.Windows.MessageBox.Show(Start.PutinBB.ToString());
                 StreamWriter ss = new StreamWriter("Put.txt");
                 ss.WriteLine(Start.PutinBB.ToString());
                 ss.Close();
@@ -84,7 +83,6 @@ namespace PK_KONTR
             {
                 string str = dialog.FileName;
                 Start.PutinBB = str;
-                //System.Windows.MessageBox.Show(Start.PutinBB.ToString());
                 StreamWriter ss = new StreamWriter("PutHH.txt");
                 ss.WriteLine(Start.PutinBB.ToString());
                 ss.Close();

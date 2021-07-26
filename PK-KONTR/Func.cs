@@ -29,8 +29,8 @@ namespace PK_KONTR
             Excel.Worksheet worksheet1 = App.Worksheets["Данные"];
             Excel.Worksheet worksheet2 = App.Worksheets["Отчет"];
             int Ind = 0;
+            int IT = 0;
             int k = 0;
-            //worksheet1.Cells[6][7] = "sfsfssf";
             int lastRow = worksheet1.Cells[1].SpecialCells(Excel.XlCellType.xlCellTypeLastCell, Type.Missing).Row;
                 //MessageBox.Show($"Последняя строчка: {lastRow}");
                 Excel.Range Head291 = worksheet2.Range[worksheet2.Cells[1][1], worksheet2.Cells[6][1]];
@@ -39,12 +39,10 @@ namespace PK_KONTR
             {
                     int pp = StartIndex;
                     worksheet2.Columns.AutoFit();
-                    //Rng = worksheet2.Cells[6].Find(Start.str[Ind], Type.Missing, Excel.XlFindLookIn.xlValues, Excel.XlLookAt.xlPart); //осуществляем поиск на листе
                     if (s[Ind].Contains(worksheet1.Cells[6][i].Formula)) 
                 {
                     int st = i;
                     int sd = StartIndex;
-                        //MessageBox.Show(Start.str[Ind].ToString()); 
                         worksheet2.Cells[1][StartIndex] = worksheet1.Cells[1][st];
                         worksheet2.Cells[6][StartIndex] = "Комментарий";
                             worksheet2.Cells[2][StartIndex] = worksheet1.Cells[2][st];
@@ -56,7 +54,7 @@ namespace PK_KONTR
                         StartIndex += 1;
                         int po = StartIndex;
                         worksheet2.Cells[1][StartIndex] = "Поступило, шт";
-                            worksheet2.Cells[2][StartIndex] = Start.str1[Ind];
+                            worksheet2.Cells[2][StartIndex] = Start.str1[IT];
                             Excel.Range Head211 = worksheet2.Range[worksheet2.Cells[2][StartIndex], worksheet2.Cells[5][StartIndex]];
                             Head211.Merge();
                             StartIndex += 1;
@@ -73,8 +71,6 @@ namespace PK_KONTR
                             StartIndex += 1;
                             worksheet2.Cells[1][StartIndex] = worksheet1.Cells[7][st];
                             worksheet2.Cells[2][StartIndex] = worksheet1.Cells[8][st];
-                            //Excel.Range Head27 = worksheet2.Range[worksheet2.Cells[2][StartIndex], worksheet2.Cells[6][StartIndex]];
-                            //Head27.Merge();
                             StartIndex += 1;
                             worksheet2.Cells[1][StartIndex] = worksheet1.Cells[9][st];
                             worksheet2.Cells[2][StartIndex] = worksheet1.Cells[10][st];
@@ -106,7 +102,7 @@ namespace PK_KONTR
                     {
                         k += 1;
                         if (Ind < Start.KolPov)
-                        { Ind += 1; }
+                        { Ind += 1; IT += 1; }
                         i = 1;
                       
                     }
@@ -154,14 +150,14 @@ namespace PK_KONTR
                 Excel.Range Head2112499 = worksheet2.Range[worksheet2.Cells[2][StartIndex], worksheet2.Cells[4][StartIndex]];
                 Head2112499.Merge();
                 worksheet2.Cells[2][StartIndex] = "«______»___________20____";
-
             }
             catch
             {
-                App.Quit();
+                App.Application.Quit();
                 MessageBox.Show(" Ошибка!!! Перезапустите приложение");
             }
 
-            App.Visible = true;        }
+            App.Visible = true;        
+        }
     }
 }
